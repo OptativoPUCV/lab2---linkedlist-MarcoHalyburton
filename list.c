@@ -28,25 +28,33 @@ Node * createNode(void * data) {
     return new;
 }
 
-List* createList() {
-    List* nuevaLista = (List*)malloc(sizeof(List));
+List * createList() {
+    List * nuevaLista = (List *)malloc(sizeof(List));
     if (nuevaLista == NULL) {
         perror("Error: No se pudo asignar memoria para la lista.");
         exit(EXIT_FAILURE);
     }
-
+    
     nuevaLista->head = NULL;
     nuevaLista->tail = NULL;
     nuevaLista->current = NULL;
-
+    
     return nuevaLista;
 }
 
 void * firstList(List * list) {
+    if (list->head != NULL) {
+        list->current = list->head;
+        return list->head->data;
+    }
     return NULL;
 }
 
 void * nextList(List * list) {
+    if (list->current != NULL && list->current->next != NULL) {
+        list->current = list->current->next;
+        return list->current->data;
+    }
     return NULL;
 }
 

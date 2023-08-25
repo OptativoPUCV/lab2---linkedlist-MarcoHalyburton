@@ -37,3 +37,9 @@ list.h:7:8: note: originally defined here
       |        ^~~~
 Compilation failed
 bb1ffbd
+Fri 25 Aug 2023 03:03:05 AM UTC: 
+ list.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ tests:  5|4
+total_score: 25/70
+b3967b5
