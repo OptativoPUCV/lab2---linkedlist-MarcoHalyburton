@@ -15,3 +15,25 @@ list.c:39:15: error: ‘List’ {aka ‘struct List’} has no member named ‘l
       |               ^~
 Compilation failed
 73fcd7d
+Fri 25 Aug 2023 02:34:18 AM UTC: 
+ list.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from list.c:4,
+                 from test.c:5:
+list.h:18:3: error: conflicting types for ‘List’
+   18 | } List;
+      |   ^~~~
+list.h:4:21: note: previous declaration of ‘List’ was here
+    4 | typedef struct List List;
+      |                     ^~~~
+In file included from test.c:5:
+list.c:8:8: error: redefinition of ‘struct Node’
+    8 | struct Node {
+      |        ^~~~
+In file included from list.c:4,
+                 from test.c:5:
+list.h:7:8: note: originally defined here
+    7 | struct Node {
+      |        ^~~~
+Compilation failed
+bb1ffbd

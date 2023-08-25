@@ -35,8 +35,9 @@ List* createList() {
         exit(EXIT_FAILURE);
     }
 
-    nuevaLista->first = NULL;
-    nuevaLista->last = NULL;
+    nuevaLista->head = NULL;
+    nuevaLista->tail = NULL;
+    nuevaLista->current = NULL;
 
     return nuevaLista;
 }
